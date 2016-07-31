@@ -10,6 +10,9 @@ D[is.na(D)]=0
 theWeekDay=format(as.Date(date[,1]),"%u")
 X1=D[theWeekDay==1,]
 X2=D[theWeekDay!=1,]
+X1=as.matrix(X1)
+X2=as.matrix(X2)
+p=ncol(X1)
 source("./stat.R")
 source("./permutationTest.R")
 JJJ=myPermutation(X1,X2,n1=nrow(X1),n2=nrow(X2),B=50,rmax=10)
